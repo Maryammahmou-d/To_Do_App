@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'colors.dart';
 
 class AppThemeing {
@@ -26,17 +25,19 @@ class AppThemeing {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: blueColor,
-      unselectedItemColor: Colors.grey,
-    ),
-    textTheme: const TextTheme(
-      titleSmall: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.normal, color: Colors.black),
-      titleMedium: TextStyle(
-          fontSize: 25, fontWeight: FontWeight.w600, color: greenColor),
-      titleLarge: TextStyle(
-          fontSize: 30, fontWeight: FontWeight.w900, color: blueColor),
-    ),
-  );
+        unselectedItemColor: Colors.grey,
+      ),
+      textTheme: const TextTheme(
+        titleSmall: TextStyle(
+            fontSize: 20, fontWeight: FontWeight.normal, color: Colors.black),
+        titleMedium: TextStyle(
+            fontSize: 25, fontWeight: FontWeight.w600, color: greenColor),
+        titleLarge: TextStyle(
+            fontSize: 30, fontWeight: FontWeight.w900, color: blueColor),
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: blueColor,
+      ));
 
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: darkPrimary,
@@ -60,15 +61,17 @@ class AppThemeing {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: blueColor,
-      unselectedItemColor: Colors.grey,
-    ),
-    textTheme: const TextTheme(
-      titleSmall: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.normal, color: blackColor),
-      titleMedium: TextStyle(
-          fontSize: 25, fontWeight: FontWeight.w600, color: greenColor),
-      titleLarge: TextStyle(
-          fontSize: 30, fontWeight: FontWeight.w900, color: blueColor),
-    ),
-  );
+        unselectedItemColor: Colors.grey,
+      ),
+      textTheme: const TextTheme(
+        titleSmall: TextStyle(
+            fontSize: 20, fontWeight: FontWeight.normal, color: blackColor),
+        titleMedium: TextStyle(
+            fontSize: 25, fontWeight: FontWeight.w600, color: greenColor),
+        titleLarge: TextStyle(
+            fontSize: 30, fontWeight: FontWeight.w900, color: blueColor),
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: blueColor,
+      ));
 }
