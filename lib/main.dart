@@ -15,7 +15,7 @@ class ToDoApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: HomeLayout.routeName,
       routes: {
-        HomeLayout.routeName: (context) => const HomeLayout(),
+        HomeLayout.routeName: (context) => HomeLayout(),
       },
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
