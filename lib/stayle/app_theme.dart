@@ -12,19 +12,19 @@ class AppThemeing {
       onSecondary: Colors.white,
       error: Colors.red,
       onError: Colors.white,
-      surface: Colors.white30,
-      onSurface: Colors.white30,
-    ),
-    appBarTheme: const AppBarTheme(
-      elevation: 0.0,
-      backgroundColor: blueColor,
-      iconTheme: IconThemeData(
-        color: Colors.black,
+        surface: Colors.white30,
+        onSurface: Colors.white30,
       ),
-    ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Colors.white,
-      selectedItemColor: blueColor,
+      appBarTheme: AppBarTheme(
+        elevation: 0.0,
+        backgroundColor: Colors.teal[50],
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: Colors.grey,
+        selectedItemColor: Colors.teal[50],
         unselectedItemColor: Colors.grey,
       ),
       textTheme: const TextTheme(
@@ -40,27 +40,27 @@ class AppThemeing {
       ));
 
   static ThemeData darkTheme = ThemeData(
-    scaffoldBackgroundColor: darkPrimary,
-    colorScheme: const ColorScheme(
-        brightness: Brightness.light,
-        primary: blueColor,
-        onPrimary: Colors.white,
-        secondary: blackColor,
-        onSecondary: Colors.white,
-        error: Colors.red,
-        onError: Colors.white,
-        surface: Colors.white30,
-        onSurface: Colors.white30),
-    appBarTheme: const AppBarTheme(
-      elevation: 0.0,
-      backgroundColor: blueColor,
-      iconTheme: IconThemeData(
-        color: Colors.black,
+      scaffoldBackgroundColor: darkPrimary,
+      colorScheme: const ColorScheme(
+          brightness: Brightness.light,
+          primary: blueColor,
+          onPrimary: Colors.white,
+          secondary: blackColor,
+          onSecondary: Colors.white,
+          error: Colors.red,
+          onError: Colors.white,
+          surface: shadowBlueColor,
+          onSurface: shadowBlueColor),
+      appBarTheme: const AppBarTheme(
+        elevation: 0.0,
+        backgroundColor: Colors.blueGrey,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
       ),
-    ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Colors.white,
-      selectedItemColor: blueColor,
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.teal[50],
         unselectedItemColor: Colors.grey,
       ),
       textTheme: const TextTheme(
