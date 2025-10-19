@@ -23,8 +23,8 @@ class AppThemeing {
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.grey,
-        selectedItemColor: Colors.teal[50],
+        backgroundColor: Colors.transparent,
+        selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
       ),
       textTheme: const TextTheme(
@@ -59,8 +59,8 @@ class AppThemeing {
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.teal[50],
+        backgroundColor: Colors.transparent,
+        selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
       ),
       textTheme: const TextTheme(

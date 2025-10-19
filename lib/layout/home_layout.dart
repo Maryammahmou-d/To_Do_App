@@ -4,14 +4,13 @@ import 'package:to_do_app/Provider/Home_Provider/home_layout_provider.dart';
 import 'package:to_do_app/layout/add_task_bottom_sheet.dart';
 import 'package:to_do_app/modules/settings/settings_tab.dart';
 import '../modules/task_list/task_list_tab.dart';
-import '../stayle/colors.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = "Home";
 
   HomeLayout({super.key});
 
-  List<Widget> Tabs = [TasksListTab(), SettingsTab()];
+  List<Widget> tabs = [const TasksListTab(), const SettingsTab()];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class HomeLayout extends StatelessWidget {
                 FloatingActionButtonLocation.centerDocked,
             floatingActionButton: FloatingActionButton(
               backgroundColor: Colors.teal[50],
-              shape: StadiumBorder(
+              shape: const StadiumBorder(
                   side: BorderSide(
                 color: Colors.white,
                 width: 2,
@@ -46,30 +45,31 @@ class HomeLayout extends StatelessWidget {
               onPressed: () {
                 showAddTaskBottomSheet(context);
               },
-              child: Icon(
+              child: const Icon(
                 Icons.add,
                 size: 30,
               ),
             ),
             bottomNavigationBar: BottomAppBar(
-              color: Colors.grey,
+              color: Colors.teal[50],
               notchMargin: 8,
-              shape: CircularNotchedRectangle(),
+              shape: const CircularNotchedRectangle(),
               child: BottomNavigationBar(
-                backgroundColor: Colors.transparent,
                 elevation: 0.0,
                 type: BottomNavigationBarType.shifting,
-                items: [
+                items: const [
                   BottomNavigationBarItem(
+                      backgroundColor: Colors.transparent,
                       icon: Icon(
                         Icons.list,
-                        size: 20,
+                        size: 22,
                       ),
                       label: "Tasks"),
                   BottomNavigationBarItem(
+                      backgroundColor: Colors.transparent,
                       icon: Icon(
                         Icons.settings,
-                        size: 20,
+                        size: 22,
                       ),
                       label: "Settings")
                 ],
@@ -79,7 +79,7 @@ class HomeLayout extends StatelessWidget {
                 },
               ),
             ),
-            body: Tabs[provider.currentIndex],
+            body: tabs[provider.currentIndex],
           ),
         );
       },
@@ -94,7 +94,7 @@ class HomeLayout extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: AddTaskBottomSheet(),
+            child: const AddTaskBottomSheet(),
           );
         });
   }
