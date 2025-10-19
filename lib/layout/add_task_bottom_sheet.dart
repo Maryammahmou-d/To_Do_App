@@ -11,7 +11,7 @@ class AddTaskBottomSheet extends StatefulWidget {
 class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   DateTime? _selectedDate;
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Future<void> _pickDate() async {
     final DateTime? picked = await showDatePicker(
