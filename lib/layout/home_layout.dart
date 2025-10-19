@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:to_do_app/Provider/Home_Provider/home_layout_provider.dart';
 import 'package:to_do_app/layout/add_task_bottom_sheet.dart';
 import 'package:to_do_app/modules/settings/settings_tab.dart';
+import 'package:to_do_app/stayle/colors.dart';
 import '../modules/task_list/task_list_tab.dart';
 
 class HomeLayout extends StatelessWidget {
@@ -21,7 +22,7 @@ class HomeLayout extends StatelessWidget {
         return SafeArea(
           child: Scaffold(
             extendBody: true,
-            backgroundColor: Colors.blueGrey,
+            backgroundColor: backgroundColor,
             appBar: AppBar(
               //toolbarHeight: 100,
               //toolbarHeight: MediaQuery.of(context).size.height * 0.2,
