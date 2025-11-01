@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:calendar_timeline/calendar_timeline.dart';
-import 'package:to_do_app/stayle/colors.dart';
+import 'package:to_do_app/modules/task_list/task_item_widget.dart';
 
 class TasksListTab extends StatelessWidget {
   const TasksListTab({super.key});
@@ -9,23 +9,31 @@ class TasksListTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 10,
+        const SizedBox(
+          height: 15,
         ),
         CalendarTimeline(
           showYears: true,
           initialDate: DateTime.now(),
-          firstDate: DateTime.now(),
-          lastDate: DateTime(2030, 1, 1),
-          onDateSelected: (date) => print(date),
-          leftMargin: 20,
+          firstDate: DateTime.now().subtract(Duration(days: 365)),
+          lastDate: DateTime.now().add(Duration(days: 730)),
+          onDateSelected: (date) {},
+          leftMargin: 10,
+          dayNameColor: Colors.teal,
           monthColor: Colors.teal[50],
           dayColor: Colors.teal[50],
           activeDayColor: Colors.black,
           activeBackgroundDayColor: Colors.white,
           dotColor: Colors.blueGrey,
-          selectableDayPredicate: (date) => date.day != 23,
           locale: 'en_ISO',
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return TaskItem();
+            },
+            itemCount: 10,
+          ),
         ),
       ],
     );

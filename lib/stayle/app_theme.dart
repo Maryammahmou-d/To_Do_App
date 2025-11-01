@@ -3,15 +3,15 @@ import 'colors.dart';
 
 class AppThemeing {
   static ThemeData lightMode = ThemeData(
-    scaffoldBackgroundColor: greenBackgroundColor,
-    colorScheme: const ColorScheme(
-      brightness: Brightness.light,
-      primary: blueColor,
-      onPrimary: Colors.white,
-      secondary: blackColor,
-      onSecondary: Colors.white,
-      error: Colors.red,
-      onError: Colors.white,
+      scaffoldBackgroundColor: backgroundColor,
+      colorScheme: const ColorScheme(
+        brightness: Brightness.light,
+        primary: blueColor,
+        onPrimary: Colors.white,
+        secondary: blackColor,
+        onSecondary: Colors.white,
+        error: Colors.red,
+        onError: Colors.white,
         surface: Colors.white30,
         onSurface: Colors.white30,
       ),
@@ -22,9 +22,9 @@ class AppThemeing {
           color: Colors.black,
         ),
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.grey,
-        selectedItemColor: Colors.teal[50],
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Colors.transparent,
+        selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
       ),
       textTheme: const TextTheme(
@@ -35,7 +35,7 @@ class AppThemeing {
         titleLarge: TextStyle(
             fontSize: 30, fontWeight: FontWeight.w900, color: blueColor),
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: blueColor,
       ));
 
@@ -58,9 +58,9 @@ class AppThemeing {
           color: Colors.black,
         ),
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.teal[50],
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Colors.transparent,
+        selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
       ),
       textTheme: const TextTheme(
@@ -71,7 +71,7 @@ class AppThemeing {
         titleLarge: TextStyle(
             fontSize: 30, fontWeight: FontWeight.w900, color: blueColor),
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: blueColor,
       ));
 }
