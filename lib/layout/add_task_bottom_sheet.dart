@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/models/task_data_model.dart';
 import 'package:to_do_app/stayle/colors.dart';
+
+import '../network/local/firebase_utils.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   const AddTaskBottomSheet({super.key});
@@ -10,15 +13,16 @@ class AddTaskBottomSheet extends StatefulWidget {
 
 class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   DateTime? _selectedDate;
-
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Future<void> _pickDate() async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime(2020),
-      lastDate: DateTime(2030),
+      firstDate: DateTime.now().subtract(Duration(days: 365)),
+      lastDate: DateTime.now().add(Duration(days: 710)),
       builder: (context, child) {
         return Center(
           child: Container(
@@ -62,6 +66,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: _titleController,
                 validator: (value) {
                   if (value == null || value.trim() == "") {
                     return "Please Enter Valid Title";
@@ -86,6 +91,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: _descriptionController,
                 validator: (value) {
                   if (value == null || value.trim() == "") {
                     return "Please enter Valid Description";
@@ -136,7 +142,11 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    print("All fields are valid");
+                    Task task = Task(
+                        title: _titleController.text,
+                        description: _descriptionController.text,
+                        date: _selectedDate!);
+                    addTaskToFirebase(task);
                     Navigator.pop(context);
                   }
                 },
@@ -150,7 +160,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       .titleMedium
                       ?.copyWith(color: shadowBlueColor),
                 ),
-              )
+              ),
             ],
           ),
         ),
