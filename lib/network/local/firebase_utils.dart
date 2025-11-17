@@ -8,14 +8,23 @@ CollectionReference<Task> getTaskCollection() {
       );
 }
 
-void addTaskToFirebase(Task task) {
+Future<void> addTaskToFirebase(Task task) {
   //FirebaseFirestore.instance.collection("Tasks").add()
-
   var collection = getTaskCollection(); // to get the collection
   var docRef = collection.doc(); //add a doc the collection with auto ID
   task.id = docRef.id; // set the task obj ID as the Doc
-  docRef.set(task); // set other task obj date to the Doc im already created
+  return docRef
+      .set(task); // set other task obj date to the Doc im already created
 }
+
+Stream<QuerySnapshot<Task>> getTasksFromFireStore(DateTime selectedDate) {
+  return getTaskCollection().where("date", isEqualTo: selectedDate).snapshots();
+}
+
+Future<void> deleteTaskFromFirestore(String id) {
+  return getTaskCollection().doc(id).delete();
+}
+
 
 // void addTaskUsingModel() {
 //   FirebaseFirestore.instance.collection("Tasks").withConverter<Task>(
