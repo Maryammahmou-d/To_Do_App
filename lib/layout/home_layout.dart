@@ -11,7 +11,7 @@ class HomeLayout extends StatelessWidget {
 
   HomeLayout({super.key});
 
-  List<Widget> tabs = [const TasksListTab(), const SettingsTab()];
+  List<Widget> tabs = [TasksListTab(), SettingsTab()];
 
   @override
   Widget build(BuildContext context) {
