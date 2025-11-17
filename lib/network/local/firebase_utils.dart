@@ -25,9 +25,6 @@ Future<void> deleteTaskFromFirestore(String id) {
   return getTaskCollection().doc(id).delete();
 }
 
-Future<void> updateTaskFromFirstore(Task task) {
-  return getTaskCollection().doc(task.id).update(task.toJSON());
-}
 
 // void addTaskUsingModel() {
 //   FirebaseFirestore.instance.collection("Tasks").withConverter<Task>(

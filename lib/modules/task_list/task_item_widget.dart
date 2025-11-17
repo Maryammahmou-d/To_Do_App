@@ -27,7 +27,6 @@ class TaskItem extends StatelessWidget {
           ),
           SlidableAction(
             onPressed: (context) {
-              updateTaskFromFirstore(task);
             },
             backgroundColor: Colors.blueGrey,
             icon: Icons.edit,
